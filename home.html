@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>My Web Page</title>
+		<title>Home</title>
 		<link rel="stylesheet" href="./css/nav.css">
+		<link rel="icon" type="image/svg_xml" href="./img/icon/My.svg" sizes="32x32">
 		<style>
+			@font-face {
+			  font-family: 'Deyi';
+			  src: url('./font/SmileySans-Oblique.otf');
+			}
+			
+			html {
+				font-family: 'Deyi';
+				letter-spacing: 1px;
+				width: 100%;
+				height: 100%;
+			}
+			
+			body {
+				background-image: url(../img/Kelezan_cyberpunk_background_Retrowave_A_dark_blue_night_sky_wi_25a6e409-bc8e-4f57-8f50-d5476195d791_clipdrop-enhance.png);
+				background-attachment: fixed;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				display: flex;
+				height: 100%;
+			}
+			
 			body {
 				background-image: url("./img/imgs/ai绘图/主页图备选.jpg");
 				background-size: cover;
-				background-position: 10% 20%;
+				background-position: 10% 40%;
+				width: 100vw;
+				background-attachment: fixed;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				display: flex;
+				height: 100%;
+				overflow-x: hidden;
 			}
+			
 
 			#content {
 				display: flex;
@@ -21,21 +53,38 @@
 
 			.content-section {
 				width: 200px;
-				height: 200px;
-				background-color: white;
+				height: auto;
+				background-color: rgba(255, 255, 255, 0);
+				backdrop-filter:blur(0px);
 				border-radius: 10px;
-				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				cursor: pointer;
 				transition: all 0.2s ease;
-				margin-top:10px
+				margin-top:-10px;
+				/* border-radius: 50%; */
 				
 			}
+			
+			.content-section:nth-of-type(1){
+				position: relative;
+				top: -85px;
+				left: 600px;
+			}
+			.content-section:nth-of-type(2){
+				position: relative;
+				top: -230px;
+				right: -1100px;
+				
+			}
+			
+			.content-section img {
+				transition: 0.5s;
+			}
 
-			.content-section:hover {
-				background-color: #eee;
+			.content-section:hover img {
+				filter: blur(2px);
 			}
 
 			#intro {
@@ -84,54 +133,65 @@
 				transform: scale(1.1);
 			}
 			
-			 @media (min-width: 600px) and (max-width: 800px){
-					#content img{
-						height: 200%;
-					}
-			 }
+			.traction_wire {
+				position:absolute;
+				color: rgba(218, 250, 5, 0.7);
+				font-weight: 900;
+				text-shadow: 0 0 7px rgba(199, 254, 0, 1.0);
+				top: 238px;
+				left: 100px;
+				font-size: 200%;
+			}
+			
+			.traction_wire:nth-child(3) {
+				color: rgba(238, 110, 241, 1.0);
+				text-shadow: 0 0 10px rgba(255, 123, 255, 1.0);
+				top: 160px;
+				left: -197px;
+				font-size: 170%;
+			}
+			#intro {
+				width: 50vw;
+				background-color: rgba(0, 0, 0, 0);
+				border-radius: 50px;
+				position: fixed;
+				top: 78%;
+				left: 63.5%;
+				font-size: 200%;
+				color: rgba(255, 226, 122, 1.0);
+				text-shadow: 0 0 7px rgba(225, 193, 88, 1.0);
+			}
 		</style>
 	</head>
 	<body>
 		<div id="navbar">
 			<div class="navbar-section" id="shouye"><img src="./img/icon/My(2).png" style="width: 8%;transform: translateY(5px);" alt=""> Collection</div>
-			<div class="navbar-section" id="zhanlanguan">Exhibition</div>
+			<div class="navbar-section" id="Author" style="position:relative; right: 1400px;">Contact</div>
 		</div>
 		<div id="content">
 			<div class="content-section">
-				<a href="page1.html"><img src="image1.jpg" alt="Image 1"></a>
+				<a href="./Author_Information.html"><img src="./img/icon/SC (62).png" style="width: 360px;" alt="Image 1"></a>
+				<div class="traction_wire">————————</div>
 			</div>
+			
 			<div class="content-section">
-				<a href="page2.html"><img src="image2.jpg" alt="Image 2"></a>
-			</div>
-			<div class="content-section">
-				<a href="page3.html"><img src="image3.jpg" alt="Image 3"></a>
-			</div>
-			<div class="content-section">
-				<a href="page4.html"><img src="image4.jpg" alt="Image 4"></a>
+				<a href="./Content_Library.html"><img src="./img/icon/tid305t001131/3x/资源 1@3x.png" style="width: 110%;" alt="Image 2"></a>
+				<hr style="color: wheat;"/>
+				<div class="traction_wire">————————</div>
 			</div>
 		</div>
 		<div id="intro">
-			<h2>Introduction</h2>
-			<p>Some text
-		<div id="intro2">
-			<h2>Introduction</h2>
-			<p>Some text
-	
+			<h2 id="intro_text_h2_1" style="font-weight: 900;">Ship of Theseus: Cyberpunk Era</h2>
+		</div>
 	</body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			$("#shouye").click(function() {
-				window.location.href = "./shouye.html";
+				window.location.href = "./home.html";
 			});
-			$("#zhanlanguan").click(function() {
-				window.location.href = "./Content_Library.html";
-			});
-			$("#three").click(function() {
-				window.location.href = "https://example.com/page2.html";
-			});
-			$("#four").click(function() {
-				window.location.href = "https://example.com/page2.html";
+			$("#Author").click(function() {
+				window.location.href = "./Author_Information.html";
 			});
 		});
 	</script>

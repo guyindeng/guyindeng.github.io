@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Content Library</title>
+		<link rel="icon" type="image/svg_xml" href="../img/icon/My.svg" sizes="32x32">
+		<style>
+			@font-face {
+			  font-family: 'Deyi';
+			  src: url('./font/SmileySans-Oblique.otf');
+			}
+			
+			html {
+				font-family: 'Deyi';
+				letter-spacing: 1px;
+				width: 100%;
+				height: 100%;
+			}
+
+			body {
+				background-image: url("./img/imgs/ai绘图/义肢部分可用图.jpg");
+				background-size: cover;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				background-image: url('your-image-url.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				transition: 0.5s;
+			}
+
+			img:hover {
+				transform: scale(1.2);
+				filter: blur(10px);
+			}
+
+			#content {
+				height: 50vw;
+				width: 70vw;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				align-items: center;
+				height: 80vh;
+				margin-top: 10vh;
+				margin-left: 15vw;
+			}
+
+		 .content-section {
+				width: 25vw;
+				height: 25vh;
+				background-color: white;
+				border-radius: 10px;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				margin: 1vh 1vw;
+				overflow: hidden;
+				position: relative;
+				display: inline-block;
+			}
+
+			.content-section:hover {
+				background-color: #eee;
+			}
+
+			#intro {
+				background-color: rgba(0, 0, 0, 0.3);
+				border-radius: 50px;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				padding: 2vh 2vw;
+				margin: 2vh 2vw;
+				height: 9vh;
+				width: calc(20% - 4vw);
+				position: fixed;
+				top: 90%;
+				right: 3.4vw;
+				transform: translateY(-50%);
+				font-size: 1%;
+				backdrop-filter: blur(70px);
+				color: rgba(0, 0, 127, 1);
+			}
+
+			#contact {
+				position: absolute;
+				bottom: 2vh;
+				right: 2vw;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.contact-icon {
+				width: 5vw;
+				height: 5vw;
+				margin-top: 1vh;
+				cursor: pointer;
+			}
+
+			.contact-icon:hover {
+				transform: scale(1.1);
+			}
+
+			.miaoshu {
+				opacity: 0.3;
+			}
+
+			#navbar {
+				background-color: rgba(185, 185, 185, 0.1);
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				backdrop-filter: blur(5px);
+				overflow: hidden;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				height: 80px;
+				position: fixed;
+				width: 99.5%;
+				top: 3px;
+				z-index: 100;
+				border-radius: 20px 20px 20px 20px;
+			}
+
+			.navbar-section {
+				color: rgba(0, 0, 0, 0.5);
+				padding: 14px 20px;
+				font-size: 18px;
+				font-weight: 900;
+				cursor: pointer;
+				text-align: center;
+				transition: 0.5s;
+				border-radius: 10px;
+				background-color: rgba(255, 255, 255, 0.8);
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+			}
+
+			#shouye {
+				margin-left: 10px;
+				border-radius: 20px;
+			}
+
+			#zhanlanguan {
+				background-color: rgba(0, 0, 127, 1);
+				color: rgba(0, 255, 0, 1.0);
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				position: relative;
+				border-radius: 20px;
+				right: 72vw;
+			}
+
+			.navbar-section:hover {
+				background-color: rgba(0, 0, 127, 1);
+				color: rgba(0, 255, 0, 1.0);
+			}
+
+			.navbar-section:hover img {
+				filter: invert(1)
+			}
+
+			#zhanlanguan:hover {
+				border-radius: 10px;
+				background-color: rgba(0, 0, 127, 1);
+				color: rgba(0, 255, 0, 1.0);
+			}
+			
+			@media (max-width: 600px) {
+				#content {
+					margin-top: 10vh;
+					height: auto;
+				}
+				
+				.content-section {
+					width: 80%;
+					height: 150px;
+					margin-top: 10px;
+				}
+
+				#intro {
+					background-color: white;
+					border-radius: 10px;
+					shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+					padding: 15.5px;
+					padding-left: 21.5px;
+					margin: 20px;
+					height: calc(5.7%);
+					width: calc(69%);
+					position: fixed;
+					top: 92%;
+					left: 10%;
+				}
+				#content-section_img_1 {
+					transform: translate(0px,-60px);
+				}
+				#intro_img_1 {
+					width: 19.3%;
+					transform: translate(50.5vw,-6vh);
+				}
+			}
+
+			@media (max-width: 800px) {
+				#zhanlanguan {
+					width: 140px;
+					height: 30px;
+					line-height: 30px;
+					font-size: 80%;
+					right: 1.5vw;
+					margin-left: -20px;
+					border-radius: 20px;
+					background-color: rgba(0, 0, 127, 1);
+					color: rgba(241, 241, 241, 1.0);
+					box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				}
+
+				#navbar {
+					background-color: rgba(185, 185, 185, 0.1);
+					box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+					backdrop-filter: blur(5px);
+					overflow: hidden;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					height: 50px;
+					position: fixed;
+					width: 96.1%;
+					top: 3px;
+					z-index: 100;
+					border-radius: 20px 20px 20px 20px;
+				}
+
+				#shouye {
+					margin-left: 10px;
+					border-radius: 20px;
+				}
+
+				.navbar-section {
+					color: rgba(0, 0, 0, 0.5);
+					padding: 3px 0px;
+					font-size: 18px;
+					font-weight: 900;
+					cursor: pointer;
+					text-align: center;
+					transition:0.5s;
+					border-radius: 10px;
+					background-color: rgba(255, 255, 255, 0.8);
+					box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				}
+			}
+			@media (min-width: 800px) {
+				#content-section_img_1 {
+					transform: translate(0px,-100px);
+				}
+				#intro {
+					width:  calc(23% - 7vw);
+					height: 7vh;
+					padding-left: 2vw;
+					padding-bottom: 50px;
+					margin-top: 20px;
+					color: wheat;
+					font-size: 53%;
+				}
+				#intro_img_1 {
+					width: 23.3%;
+					transform: translate(12.5vw,-7vh);
+				}
+			}
+			@media (min-width: 1081px){
+				#intro {
+					padding-top: 1.1%;
+				}
+				 #intro_img_1 {
+				 	width: 24.3%;
+				 	transform: translate(12.3vw,-80px);
+				 }
+				 
+				 
+			}
+		</style>
+	</head>
+	<body>
+		<div id="navbar">
+			<div class="navbar-section" id="shouye"><img src="./img/icon/My(2).png"
+					style="width: 8%;transform: translateY(5px);" alt=""> Collection</div>
+		</div>
+		<div id="content">
+			<div class="content-section">
+				<a href="./Project/xuruie.html"><img id="content-section_img_1" src="./img/imgs/艺术家作品/E/Xurui+E+work/1/A53A9685.jpg" alt="Image 1"></a>
+				<span class="miaoshu"
+					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; color: white;">Artists:Xurui E</span>
+			</div>
+			<div class="content-section">
+				<a href="./Project/thomas_besset.html"><img src="./img/imgs/艺术家作品/Besset/Bone Plants Heart - 3.jpg"
+						alt="Image 2"></a>
+				<span class="miaoshu"
+					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; color: white;">Artists:Besset</span>
+			</div>
+			<div class="content-section">
+				<a href="./Project/peilianli.html"><img
+						src="./img/imgs/艺术家作品/Li/wetransfer_her-fingers-traced-a-ballet-of-elegance-pdf_2023-04-09_1906/Her finger.png"
+						Image 3"></a>
+				<span class="miaoshu"
+					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px; color: white;">Artists:Peilian Li</span>
+			</div>
+			<div class="content-section">
+				<a href="./Project/luhuawang.html"><img src="./img/imgs/艺术家作品/Wang/Ruins Echo/Echo/北京三里屯.jpg"
+						alt="Image 4"></a>
+				<span class="miaoshu"
+					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; color: white;">Artists:Luhua Wang</span>
+			</div>
+		</div>
+		<div id="intro">
+			<h2 id="intro_text_h2_1" style="font-weight: 900;">Curator: Guyin Deng</h2>
+			<h2 id="intro_text_h2_2" style="font-weight: 900;">Email: G.Deng-5@sms.ed.ac.uk</h2>
+			<p id="intro_text_p">copyright © 2023 Guyin Deng</p>
+			<!-- 改为style控制 -->
+			<img id="intro_img_1" src="./img/icon/像素风_邮箱.png" alt="">
+		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#shouye").click(function() {
+				window.location.href = "./home.html";
+			});
+		});
+
+		$(document).ready(function() {
+			$("img").hover(function() {
+				let index = $(this).index('img') - 1;
+				console.log(index)
+				if (index == 0 | index == 2) {
+					$(`.miaoshu:eq(${index})`).css({
+						"opacity": "1",
+						"color": "#414141",
+						"font-weight": "900",
+						"transition": "all 0.5s ease-in-out"
+					})
+				} else {
+					$(`.miaoshu:eq(${index})`).css({
+						"opacity": "1",
+						"color": "#ffffff",
+						"font-weight": "900",
+						"transition": "all 0.5s ease-in-out"
+					})
+				}
+			}, function() {
+				var index = $(this).index('img') - 1;
+				$(`.miaoshu:eq(${index})`).css({
+					"opacity": "0.3",
+					"color": "#ffffff",
+					"font-weight": "400",
+					"transition": "all 0.5s ease-in-out"
+				});
+			});
+		});
+	</script>
+</html>

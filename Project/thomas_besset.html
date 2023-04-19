@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/svg_xml" href="../img/icon/My.svg" sizes="32x32">
+		<title>Thomas Besset</title>
+		<style>
+			@font-face {
+			  font-family: 'Deyi';
+			  src: url('../font/SmileySans-Oblique.otf');
+			}
+			
+			html {
+				font-family: 'Deyi';
+				letter-spacing: 1px;
+				width: 100%;
+				height: 100%;
+			}
+
+			body {
+				background-image: url(../img/Kelezan_cyberpunk_background_Retrowave_A_dark_blue_night_sky_wi_25a6e409-bc8e-4f57-8f50-d5476195d791_clipdrop-enhance.png);
+				background-attachment: fixed;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				display: flex;
+				height: 100%;
+			}
+
+			#navbar {
+				background-color: rgba(0, 5, 21, 0.17);
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				backdrop-filter: blur(5px);
+				overflow: hidden;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				height: 80px;
+				position: fixed;
+				width: 99.5%;
+				top: 3px;
+				z-index: 100;
+				border-radius: 20px 20px 20px 20px;
+			}
+
+			.navbar-section {
+				color: rgba(0, 0, 0, 0.5);
+				padding: 14px 20px;
+				font-size: 18px;
+				font-weight: 900;
+				cursor: pointer;
+				text-align: center;
+				transition: 0.5s;
+				border-radius: 10px;
+				background-color: rgba(255, 255, 255, 0.8);
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+			}
+
+			#shouye {
+				margin-left: 10px;
+				border-radius: 20px;
+			}
+
+			#zhanlanguan {
+				background-color: rgba(0, 0, 127, 1);
+				color: rgba(0, 255, 0, 1.0);
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				position: relative;
+				border-radius: 20px;
+				right: 75vw;
+			}
+
+			.navbar-section:hover {
+				background-color: rgba(0, 0, 127, 1);
+				color: rgba(0, 255, 0, 1.0);
+			}
+
+			.navbar-section:hover img {
+				filter: invert(1)
+			}
+
+			#zhanlanguan:hover {
+				border-radius: 10px;
+				background-color: rgba(0, 0, 127, 1);
+				color: rgba(0, 255, 0, 1.0);
+			}
+
+			.text {
+				width: 50%;
+				/* height: 85%; */
+				font-size: 150%;
+				margin-top: 13vh;
+				margin-left: 90px;
+			}
+
+			.label,
+			.title,
+			.text_value,
+			.attribution,
+			.Description {
+				margin-bottom: 1rem;
+			}
+
+			.label {
+				font-size: 90%;
+				font-weight: 900;
+				color: rgba(149, 152, 167, 1.0);
+			}
+
+			.title {
+				margin-top: 110px;
+				margin-bottom: 70px;
+				font-size: 300%;
+				font-weight: 900;
+				color: rgba(11, 168, 244, 1.0);
+				text-shadow: 0 0 7px #079aee;
+				letter-spacing: 5px;
+				
+			}
+ 
+			.text_value {
+				font-size: 95%;
+				font-weight: 600;
+				color: rgba(4, 144, 221, 0.7);
+				line-height: 137%;
+				background-color: rgba(0, 0, 0, 0.8);
+				padding-left: 30px;
+				padding-right: 30px;
+				padding-bottom: 20px;
+				border-radius: 30px;
+				letter-spacing: 1px;
+				text-shadow: 0 0 7px #02699d;
+			}
+
+			.attribution {
+				font-weight: 900;
+				color: rgba(212, 164, 24, 1.0);
+				text-shadow: 0 0 7px rgba(212, 164, 24, 1.0);
+				letter-spacing: 3px;
+			}
+
+			.Description {
+				font-weight: 100;
+				color: rgba(4, 144, 221, 0.7);
+				text-shadow: 0 0 7px #079aee;
+				letter-spacing: 3px
+			}
+
+			.imgs {
+				position: relative;
+				/* height: 100%; */
+				width: 100%;
+				margin-left: 10%;
+				
+			}
+
+			/* .imgs_1,
+			.imgs_2 {
+				height: 50%;
+				width: 100%;
+				position: relative;
+				background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)),
+					linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)),
+					linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)),
+					linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1)),
+					linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)),
+					linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1));
+				background-repeat: no-repeat;
+				background-position: 22% 0, 33% 0, 44% 0, 66% 0, 77% 0, 88% 0;
+				background-size: 5px 100%, 5px 100%, 5px 100%, 5px 100%, 5px 100%, 5px 100%;
+				z-index: -1;
+			} */
+
+			.imgs_2 {
+				z-index: -2;
+			}
+
+			.imgs_1 img {
+				width: 40%;
+				opacity: 1;
+				margin-top: 90px;
+				border-radius: 20px;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+			}
+
+
+			.imgs_1 img:nth-child(2) {
+				margin-top: 8%;
+				margin-left: 7%;
+				width: 47%;
+
+			}
+			
+			.imgs_1 img:nth-of-type(1),
+			.imgs_1 img:nth-of-type(2),
+			.imgs_1 img:nth-of-type(3){
+				margin-left: 50px;
+			
+			}
+
+			.imgs_1 img:nth-of-type(n+4) {
+				position: relative;
+				top: -260%;
+				right: -60%;
+				margin-top: 20%;
+				width: 40%;
+
+			}
+			
+			.imgs_1 img:nth-of-type(4) {
+				margin-top: 100px;
+			}
+			
+			.imgs_1 img:nth-of-type(5) {
+				position: relative;
+				top: -260%;
+				right: -60%;
+			}
+
+			.imgs_1 img:nth-of-type(6) {
+				position: relative;
+				top: -265%;
+				right: -60%;
+			}
+
+			.imgs_1 img:nth-of-type(7) {
+				position: relative;
+				top: -283%;
+				right: -56%;
+				width: 40%;
+			}
+
+			.scrollable-container {
+				margin-left: -40px;
+				margin-top: 20px;
+				width: 120%;
+				height: 210px;
+				overflow: auto;
+				/* 激活滚动 */
+				white-space: nowrap;
+				/* 防止子元素换行 */
+				border: 2px solid #ccc;
+				/* 可选：为容器添加边框以便观察 */
+				position: relative;
+				top: 20px;
+				backdrop-filter: blur(20px);
+				
+				border-radius: 10px;
+			}
+
+			.image-box {
+				display: inline-block;
+				/* width: 300px; */
+				/* height: 200px; */
+				margin-right: 10px;
+				background-color: rgba(240, 240, 240,0.1);
+				backdrop-filter: blur(20px);
+				border: 1px solid #ddd;
+				/* 可选：为图像盒子添加边框以便观察 */
+				text-align: center;
+				/* 居中图像盒子内的内容 */
+				line-height: 200px;
+				/* 垂直居中图像盒子内的内容 */
+				overflow: hidden;
+			}
+
+			img {
+				max-width: 100%;
+				max-height: 100%;
+				vertical-align: middle;
+				/* 图像垂直居中 */
+			}
+			
+			.Jieshao {
+				position: absolute;
+				color: rgba(231, 239, 255, 1.0);
+			}
+			
+			@media screen and (max-width: 800px) {
+				#zhanlanguan {
+					width: 140px;
+					height: 30px;
+					line-height: 30px;
+					font-size: 80%;
+					right: 1.5vw;
+					margin-left: -20px;
+					border-radius: 20px;
+					background-color: rgba(0, 0, 127, 1);
+					color: rgba(241, 241, 241, 1.0);
+					box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				}
+
+				.text {
+					font-size: 110%;
+					margin-left: 33px;
+					margin-right: 177px;
+					margin-top: 50vh;
+				}
+				
+				.title {
+					margin-top: -35px;
+					margin-bottom: -30px;
+					font-size: 170%;
+					font-weight: 900;
+					color: rgba(231, 239, 255, 1.0);
+				}
+				
+				.text_value {
+					font-size: 50%;
+					width: 160%;
+				}
+				
+				.attribution {
+					width: 160%;
+				}
+				
+				.Description {
+					width: 190%;
+				}
+
+				#navbar {
+					background-color: rgba(185, 185, 185, 0.1);
+					box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+					backdrop-filter: blur(5px);
+					overflow: hidden;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					height: 50px;
+					position: fixed;
+					width: 96.1%;
+					top: 3px;
+					z-index: 100;
+					border-radius: 20px 20px 20px 20px;
+				}
+
+				#shouye {
+					margin-left: 10px;
+					border-radius: 20px;
+				}
+
+				.navbar-section {
+					color: rgba(0, 0, 0, 0.5);
+					padding: 3px 0px;
+					font-size: 18px;
+					font-weight: 900;
+					cursor: pointer;
+					text-align: center;
+					transition: 0.5s;
+					border-radius: 10px;
+					background-color: rgba(255, 255, 255, 0.8);
+					box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+				}
+
+				.imgs_1 img:nth-of-type(1) {
+					margin-left: 0px;
+				}
+
+				.imgs_1 img:nth-of-type(1),
+				.imgs_1 img:nth-of-type(2),
+				.imgs_1 img:nth-of-type(3) {
+					width: 90%;
+					margin-left: 10%;
+					margin-top: 70%;
+
+				}
+
+				.imgs_1 img:nth-of-type(n+2) {
+					width: 90%;
+					margin-left: 10%;
+					margin-top: 60%;
+					position: static;
+				}
+
+				.imgs_1 img:nth-of-type(5),
+				.imgs_1 img:nth-of-type(6),
+				.imgs_1 img:nth-of-type(7) {
+					display: none;
+				}
+
+				.Description {
+					display: none;
+				}
+				
+				.scrollable-container {
+					top: -70px;
+					left: -330px;
+					width: 497%;
+				}
+				
+				/* .scrollable-container:nth-of-type(1) {
+					margin-top: -30px;
+				} */
+				
+				.Jieshao{
+					position: fixed;
+					font-size: 70%;
+					top: 13px;
+					width: auto;
+					background-color: rgba(0, 0, 0, 0.3);
+					backdrop-filter: blur(20px);
+					border-radius: 20px;
+					margin-left: 20px;
+					z-index: 30;
+				}
+				.image-box img {
+					position: relative;
+					top: -200px;
+					left: -15px;
+					width: 350%;
+				}
+				#Jieshao_2_p{
+					margin-left: 23px;
+					margin-top: 7px;
+				}
+				#Jieshao_4_p{
+					margin-left: 15px;
+					margin-top: 7px;
+				}
+			}
+			@media (min-width: 800px) {
+				.scrollable-container{
+					position: relative;
+					top: 0px;
+					left: 1.5%;
+					margin-left: -40px;
+					width:100%;
+					height: 350px;
+					/* overflow: hidden; */
+					overflow-x: auto;
+					/* 激活滚动 */
+					white-space: nowrap;
+					/* 防止子元素换行 */
+					border: 2px solid #ccc;
+					/* 可选：为容器添加边框以便观察 */
+					border-radius: 50px;
+					margin-bottom: 30px;
+				}
+				.scrollable-container:nth-of-type(3){
+					width:53%;
+				}
+				.scrollable-container:nth-of-type(5){
+					width:79%;
+				}
+				.scrollable-container:nth-of-type(7){
+					width:88%;
+				}
+				.scrollable-container:nth-of-type(9){
+					width:37.5%;
+				}
+				.scrollable-container:nth-of-type(11){
+					width:70.5%;
+				}
+				.scrollable-container:nth-of-type(13){
+					width:90%;
+				}
+				.Jieshao{
+					background-color: rgba(181, 181, 181, 0.2);
+					color: rgba(253, 253, 253, 0.7);
+					position: absolute;
+					font-size: 130%;
+					top: 230px;
+					left: 30px;
+					line-height: 100%;
+					border-radius: 30px;
+					z-index: 50;
+
+				}
+				.image-box {
+					display: inline-block;
+					height: 350px;
+					margin-right: 10px;
+					background-color: #f0f0f0;
+					border: 1px solid #ddd;
+					/* 可选：为图像盒子添加边框以便观察 */
+					text-align: center;
+					/* 居中图像盒子内的内容 */
+					line-height: 200px;
+					/* 垂直居中图像盒子内的内容 */
+					overflow: hidden;
+					
+				}
+				.image-box img:nth-of-type(1) {
+					height: 80%;
+					width: 80%;
+					position: relative;
+					top: -50px;
+					left: -27px;
+					z-index: 0;
+					
+				}
+				/* .image-box img:nth-of-type(2) {
+					width: 100%;
+					height: 1;
+					position: relative;
+					top: -50px;
+					left: -70px;
+					z-index: 0;
+				} */
+				/* #image-box_14,
+				#image-box_15{
+					top: -30px;
+				} */
+				.imgs_1 img:nth-of-type(7){
+					opacity: 0;
+				}
+				
+				/* .image-box img:nth-of-type(n+12) {
+					width: 100%;
+				} */
+				
+				#zhanlanguan{
+					right: 72vw;
+				}
+				#Jieshao_2_p{
+					display:inline;
+					margin-left: 0px;
+					margin-top: 7px;
+				}
+				#Jieshao_4_p{
+					display:inline;
+					margin-left: 0px;
+					margin-top: 7px;
+				}
+				.Jieshao_value {
+					width: 100%;
+					font-size: 240%;
+					font-weight: 900;
+					color: rgba(4, 167, 254, 0.7);
+					text-shadow: 0 0 7px #02699d;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="navbar">
+			<div class="navbar-section" id="shouye"><img src="../img/icon/My(2).png" style="width: 8%;transform: translateY(-1px);" alt=""> Contact</div>
+		</div>
+		<div class="imgs">
+			<div class="imgs_1">
+				<!-- 详细内容展示页 -->
+				<hr style="width: 370px; position: relative; left: -150px; top: -90px;"/>
+				<div class="title">
+					<h2>Thomas Besset</h2>
+				</div>
+				<div class="Jieshao_value">
+					Cœur <br/>
+					40 x 40 x 60 cm <br/>
+					2022 <br/>
+					3D printing, brass, copper, electronic components. <br/>
+					Fragment of an ensemble in progress, this form, which I wish to present as a sculpture, must offer its breath to an organ composed of lungs, hearts, tracheas and lips.
+
+				</div>
+				<div class="scrollable-container">
+					<div class="Jieshao">
+						<h2>
+							&nbsp;&nbsp; Cœur &nbsp;&nbsp;
+						</h2>
+						<p>
+							
+						</p>
+					</div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Bone Plants Heart -  1.jpg" style="height: auto;" alt="Image 1"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Bone Plants Heart - 3.jpg"height: auto;" alt="Image 2"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Bone Plants Heart - 4.jpg" style="height: auto;" alt="Image 3"></div>
+				</div>
+				<div class="Jieshao_value">
+					Bone Plants . <br/>
+					Dimensions variables <br/>
+					2022 <br/>
+					3D printing, steel <br/>
+					At the border between the fossil and the plant, the nature of these organic and living forms is betrayed by the mathematical formulas which govern them.
+
+				</div>
+				<div class="scrollable-container">
+					<div class="Jieshao" id="Jieshao_2">
+						<h2>
+							&nbsp;&nbsp; Bone Plants . &nbsp;&nbsp;
+						</h2>
+						<p></p>		
+					</div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Bone Plants Tige 1 - 1.jpg" alt="Image 1"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Bone Plants Tige 1 - 2.jpg" alt="Image 2"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Bone Plants Tige 1 - 3.jpg" alt="Image 3"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Bone Plants Tige 1 - 4.jpg" alt="Image 4"></div>
+				</div>
+				<div class="Jieshao_value">
+					Casque à cils mécaniques. <br/>
+					20x25x35cm <br/>
+					2021 <br/>
+					3D printing, steel and electronic components.  The eyelashes of the helmet flutter.
+				</div>	
+				<div class="scrollable-container">
+					<div class="Jieshao">
+						<h2>
+							&nbsp;&nbsp; Casque à cils mécaniques. &nbsp;&nbsp;
+						</h2>
+						<p>
+							
+						</p>
+					</div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Casque à cils - 1.jpg" alt="Image 1"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Casque à cils - 2.jpg" alt="Image 2"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Casque à cils - 3.jpg" alt="Image 3"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Casque à cils - 4.jpg" style="transform:rotate(0deg)" alt="Image 4"></div>
+				</div>
+				<div class="Jieshao_value">
+					Échasses en acier - Première version <br/>
+					40x20x100 cm <br/>
+					2020 <br/>
+					Steel, shoes, straps, 3D printing 
+				</div>
+				<div class="scrollable-container">
+					<div class="Jieshao" id="Jieshao_4">
+						<h2>
+							&nbsp;&nbsp; Échasses en acier - Première version &nbsp;&nbsp;
+						</h2>
+						<p>
+							
+						</p>
+					</div>
+					<div class="image-box"><img id="image-box_14" src="../img/imgs/艺术家作品/Besset/Echasses acier - 2.jpg" style="height: auto;" alt="Image 1"></div>
+					<div class="image-box"><img id="image-box_15" src="../img/imgs/艺术家作品/Besset/Echasses acier - 5.jpg" style="height: auto;" alt="Image 2"></div>
+				</div>
+				<div class="Jieshao_value">
+					Échasses à suspension - Deuxième version <br/>
+					40x20x110 cm <br/>
+					2021 <br/>
+					Wood, steel, 3D printing, tire, straps.
+
+				</div>
+				<div class="scrollable-container">
+					<div class="Jieshao" id="Jieshao_4">
+						<h2>
+							&nbsp;&nbsp; Échasses à suspension - Deuxième version &nbsp;&nbsp;
+						</h2>
+						<p>
+							
+						</p>
+					</div>
+					<div class="image-box"><img id="image-box_14" src="../img/imgs/艺术家作品/Besset/Echasses à suspension - 1.jpg" style="height: auto;" alt="Image 1"></div>
+					<div class="image-box"><img id="image-box_15" src="../img/imgs/艺术家作品/Besset/Echasses à suspension - 2.jpg" style="height: auto;" alt="Image 2"></div>
+					<div class="image-box"><img id="image-box_14" src="../img/imgs/艺术家作品/Besset/Homme Orchestre - 1.jpg" style="height: auto;" alt="Image 1"></div>
+					<div class="image-box"><img id="image-box_15" src="../img/imgs/艺术家作品/Besset/Homme Orchestre - 2.jpg" style="height: auto;" alt="Image 2"></div>
+				</div>
+				<div class="Jieshao_value">
+					dorsale et son gantelet de contrôle. <br/>
+					60x45x110 cm <br/>
+					2020 <br/>
+					Wood, steel, electronic components, 3D printing. <br/>
+					String instrument. <br/>
+					8 motors come to scratch the 8 strings of this instrument placed in the back of the player, these are controlled by the movements of the hand, thanks to a gauntlet sheltering switches. <br/>
+					Movement and sound are thus linked, resulting in a choreography of the hand to play an air, a gestural language that becomes a score.
+
+				</div>
+				<div class="scrollable-container">
+					<div class="Jieshao" id="Jieshao_4">
+						<h2>
+							&nbsp;&nbsp; dorsale et son gantelet de contrôle. &nbsp;&nbsp;
+						</h2>
+						<p>
+							
+						</p>
+					</div>
+					<div class="image-box"><img id="image-box_14" src="../img/imgs/艺术家作品/Besset/Gantelet - 2.JPG" style="height: auto;" alt="Image 1"></div>
+					<div class="image-box"><img id="image-box_15" src="../img/imgs/艺术家作品/Besset/Gantelet - 5.jpg" style="height: auto;" alt="Image 2"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Gantelet - 7.jpg" style="height: auto;" alt="Image 3"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Guitare à dos - 1.JPG" style="height: auto;" alt="Image 4"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Guitare à dos - 4.JPG" style="height: auto;" alt="Image 3"></div>
+					<div class="image-box"><img src="../img/imgs/艺术家作品/Besset/Guitare à dos - 5.jpg" style="height: auto;" alt="Image 4"></div>
+				</div>
+			</div>
+			<div class="imgs_2">
+			</div>
+		</div>
+
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#shouye").click(function() {
+				window.location.href = "../Content_Library.html";
+			});
+
+		});
+	</script>
+</html>
